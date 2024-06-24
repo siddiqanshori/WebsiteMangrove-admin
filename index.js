@@ -149,33 +149,6 @@ document.addEventListener("DOMContentLoaded", function () {
             });
         }
     
-        // Temukan tombol logout berdasarkan id
-        var logoutButton = document.getElementById('logoutBtn');
-        if (logoutButton) {
-            // Tambahkan event listener untuk menangani klik tombol logout
-            logoutButton.addEventListener('click', function () {
-                // Arahkan pengguna ke halaman login (ganti "halaman-login.html" dengan path yang sesuai)
-                window.location.href = "login.html";
-            });
-        }
-    
-        // Temukan tombol more berdasarkan kelas
-        var moreButtons = document.querySelectorAll('.more-button');
-        if (moreButtons) {
-            // Tambahkan event listener untuk menampilkan popup saat tombol more diklik
-            moreButtons.forEach(function (button) {
-                button.addEventListener('click', function (event) {
-                    var rect = button.getBoundingClientRect();
-                    var popup = document.getElementById('popup');
-                    if (popup) {
-                        popup.style.display = 'block';
-                        popup.style.top = (rect.bottom + window.scrollY) + 'px';
-                        popup.style.left = (rect.left + window.scrollX - popup.offsetWidth) + 'px';
-                    }
-                });
-            });
-        }
-    
         // Tambahkan event listener untuk menutup popup saat mengklik di luar popup atau tombol more
         document.addEventListener('click', function (event) {
             var popup = document.getElementById('popup');
